@@ -1,10 +1,10 @@
-/* --- Part 2: JavaScript Functions --- */
+/* --- Part 2: JS Functions --- */
 let currentColor = 'white';
 
 function changeColor(newColor) {
-  const body = document.body; // local variable
+  const body = document.body; // local scope
   body.style.backgroundColor = newColor;
-  currentColor = newColor; // global variable updated
+  currentColor = newColor; // global variable
   updateColorText(currentColor);
   return currentColor;
 }
@@ -14,7 +14,7 @@ function updateColorText(color) {
   p.textContent = `Current Background Color: ${color}`;
 }
 
-/* --- Part 3: CSS + JS Animations --- */
+/* --- Part 3: JS-triggered CSS Animations --- */
 function toggleAnimation() {
   const box = document.querySelector('.box');
   box.classList.toggle('animate');
@@ -22,8 +22,7 @@ function toggleAnimation() {
 
 document.getElementById('animate-btn').addEventListener('click', toggleAnimation);
 
-
-// Toggle About Section Visibility
+/* --- About Section Toggle --- */
 const toggleBtn = document.getElementById('toggle-about-btn');
 const aboutSection = document.getElementById('about');
 
